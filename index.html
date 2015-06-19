@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>仿qq音乐首页幻灯片</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/sliderBanner.js"></script>
+</head>
+<body>
+    <!--幻灯片开始-->
+        <div id="slider" onmouseover="stop()" onmouseout="play()">
+            <!--大图幻灯片部分begin-->
+                <div class="slider-main">
+                    <ul>
+                        <li class="main-i" id="main_{{index}}">
+                            <a href=""> <img src="images/banner/{{index}}.jpg"/></a>
+                        </li>
+                    </ul>
+                </div>
+            <!--大图幻灯片部分end-->
+
+            <!--标题部分begin-->
+                <div class="slider-title">
+                    <ul>
+                        <li class="title-i" id="title_{{index}}"><a href="">{{h2}}</a> </li>
+                    </ul>
+                </div>
+            <!--标题部分end-->
+
+            <!--控制前后换张按钮部分begin-->
+                <div class="slider-switch">
+                    <a href="javascript:;" onclick="goPrev()" class="btn-prev"></a>
+                    <a href="javascript:;" onclick="goNext()" class="btn-next"></a>
+                </div>
+            <!--控制前后换张按钮部分end-->
+
+            <!--缩略图部分begin-->
+                <div class="slider-smImg">
+                    <ul>
+                        <li class="smImg-i" id="smImg_{{index}}" onmouseover="showImg({{index}})" index="{{index}}">
+                            <a href="">
+                                <img src="images/banner/{{index}}.jpg"/>
+                                <span class="border"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            <!--缩略图部分end-->
+
+        </div>
+    <!--幻灯片结束-->
+
+    <script>
+        window.onload=function(){
+            sliderBanner();
+         }
+    </script>
+</body>
+</html>

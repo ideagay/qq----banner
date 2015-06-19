@@ -1,0 +1,166 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html,body{
+    width:100%;
+    height:100%;
+}
+body{
+    background-color: #efefef;
+    font-size: 14px;
+    color: #333;
+    font-family: "Microsoft Yahei";
+}
+a{
+    text-decoration: none;
+    color:inherit;
+}
+
+table {
+    border-collapse: collapse; /*table默认上下两格重叠添加，该属性避免重叠添加*/
+    border-spacing: 0; /*table默认格与格之间有空隙，该属性是去掉空隙*/
+}
+
+ol,ul {
+    list-style:none;
+}
+
+
+fieldset,img,abbr,acronym{
+    border:0;
+}
+
+q:before,q:after {
+    content:"";
+}
+
+
+/* 清除浮动经典版 */
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+* html .clearfix             { zoom: 1; } /* IE6 */
+*:first-child+html .clearfix { zoom: 1; } /* IE7 */
+
+/*幻灯片开始*/
+#slider{
+    width: 700px;
+    height: 400px;
+    overflow: hidden;
+    margin: 50px auto;
+    position: relative;
+}
+
+/*大图部分*/
+#slider .slider-main{
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+#slider .slider-main .main-i{
+    position: absolute;
+    left: 0;
+    top:0;
+    display:none;
+}
+#slider .slider-main .main-i-active{
+    display:block;
+}
+#slider .slider-main img{
+    width: 100%;
+    height: 320px;
+}
+/*标题部分*/
+#slider .slider-title{
+    background-color: rgba(0,0,0,.8);
+    position: absolute;
+    left: 0;
+    bottom: 80px;
+    height: 53px;
+    width: 100%;
+    z-index: 10;
+}
+#slider .slider-title a{
+    color: white;
+    font-size: 26px;
+    line-height: 53px;
+    padding-left: 20px;
+}
+#slider .slider-title .title-i{
+    display: none;
+}
+#slider .slider-title .title-i-active{
+    display: block;
+}
+/*上下张按钮*/
+#slider .slider-switch{
+    font-size: 0;
+   /*//去掉display:inline-block的空隙*/
+    position: absolute;
+    z-index: 11;
+    bottom: 90px;
+    right:20px;
+}
+#slider .slider-switch a{
+    margin-right: 1px;
+    font-size: 14px;
+    display: inline-block;
+    width: 29px;
+    height: 29px;
+    background: url('../images/icon_focus_switch.png') no-repeat;
+}
+#slider .slider-switch a.btn-prev{
+    background-position: 0 0;
+}
+#slider .slider-switch a.btn-prev:hover{
+    background-position: -30px 0;
+}
+#slider .slider-switch a.btn-next{
+    background-position:-60px 0;
+}
+#slider .slider-switch a.btn-next:hover{
+    background-position:-90px 0;
+}
+
+/*缩略图部分*/
+#slider .slider-smImg{
+    position: relative;
+    width: 100%;
+    height: 80px;
+    padding: 10px 0;
+    background-color: #000;
+}
+#slider .slider-smImg .smImg-i{
+    float: left;
+    margin: 0 5px 0 5px;
+    font-size: 0;
+    position: relative;
+    opacity: 0.4;
+}
+#slider .slider-smImg .smImg-i .border{
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    left: 0;
+    bottom: 0;
+    background-color: #0cc65b;
+    display: none;
+}
+#slider .slider-smImg .smImg-i-active .border{
+    display: block;
+}
+#slider .slider-smImg .smImg-i-active{
+    opacity: 1;
+}
+#slider .slider-smImg .smImg-i img{
+    width: 60px;
+    height: 60px;
+}
