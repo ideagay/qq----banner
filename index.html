@@ -4,16 +4,14 @@
     <meta charset="UTF-8">
     <title>仿qq音乐首页幻灯片</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/jquery-1.9.1.min.js"></script>
-    <script src="js/sliderBanner.js"></script>
 </head>
 <body>
     <!--幻灯片开始-->
-        <div id="slider" onmouseover="stop()" onmouseout="play()">
+        <div id="slider" class="slider">
             <!--大图幻灯片部分begin-->
                 <div class="slider-main">
                     <ul>
-                        <li class="main-i" id="main_{{index}}">
+                        <li class="main-i main_{{index}}">
                             <a href=""> <img src="images/banner/{{index}}.jpg"/></a>
                         </li>
                     </ul>
@@ -23,22 +21,22 @@
             <!--标题部分begin-->
                 <div class="slider-title">
                     <ul>
-                        <li class="title-i" id="title_{{index}}"><a href="">{{h2}}</a> </li>
+                        <li class="title-i title_{{index}}"><a href="">{{h2}}</a> </li>
                     </ul>
                 </div>
             <!--标题部分end-->
 
             <!--控制前后换张按钮部分begin-->
                 <div class="slider-switch">
-                    <a href="javascript:;" onclick="goPrev()" class="btn-prev"></a>
-                    <a href="javascript:;" onclick="goNext()" class="btn-next"></a>
+                    <a href="javascript:;"  class="btn-prev"></a>
+                    <a href="javascript:;"  class="btn-next"></a>
                 </div>
             <!--控制前后换张按钮部分end-->
 
             <!--缩略图部分begin-->
                 <div class="slider-smImg">
                     <ul>
-                        <li class="smImg-i" id="smImg_{{index}}" onmouseover="showImg({{index}})" index="{{index}}">
+                        <li class="smImg-i smImg_{{index}}"  index="{{index}}">
                             <a href="">
                                 <img src="images/banner/{{index}}.jpg"/>
                                 <span class="border"></span>
@@ -51,10 +49,100 @@
         </div>
     <!--幻灯片结束-->
 
+    <!--幻灯片开始-->
+    <div id="slider1" class="slider">
+        <!--大图幻灯片部分begin-->
+        <div class="slider-main">
+            <ul>
+                <li class="main-i main_1">
+                    <a href=""> <img src="images/banner/1.jpg"/></a>
+                </li>
+                <li class="main-i main_2">
+                    <a href=""> <img src="images/banner/2.jpg"/></a>
+                </li>
+                <li class="main-i main_3">
+                    <a href=""> <img src="images/banner/3.jpg"/></a>
+                </li>
+                <li class="main-i main_4">
+                    <a href=""> <img src="images/banner/4.jpg"/></a>
+                </li>
+            </ul>
+        </div>
+        <!--大图幻灯片部分end-->
+
+        <!--标题部分begin-->
+        <div class="slider-title">
+            <ul>
+                <li class="title-i title_1"><a href="">xxx1</a> </li>
+                <li class="title-i title_2"><a href="">xxx2</a> </li>
+                <li class="title-i title_3"><a href="">xxx3</a> </li>
+                <li class="title-i title_4"><a href="">xxx3</a> </li>
+            </ul>
+        </div>
+        <!--标题部分end-->
+
+        <!--控制前后换张按钮部分begin-->
+        <div class="slider-switch">
+            <a href="javascript:;"  class="btn-prev"></a>
+            <a href="javascript:;"  class="btn-next"></a>
+        </div>
+        <!--控制前后换张按钮部分end-->
+
+        <!--缩略图部分begin-->
+        <div class="slider-smImg">
+            <ul>
+                <li class="smImg-i smImg_1"  index="1">
+                    <a href="">
+                        <img src="images/banner/1.jpg"/>
+                        <span class="border"></span>
+                    </a>
+                </li>
+                <li class="smImg-i smImg_2"  index="2">
+                    <a href="">
+                        <img src="images/banner/2.jpg"/>
+                        <span class="border"></span>
+                    </a>
+                </li>
+                <li class="smImg-i smImg_3"  index="3">
+                    <a href="">
+                        <img src="images/banner/3.jpg"/>
+                        <span class="border"></span>
+                    </a>
+                </li>
+                <li class="smImg-i smImg_4"  index="4">
+                    <a href="">
+                        <img src="images/banner/4.jpg"/>
+                        <span class="border"></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!--缩略图部分end-->
+
+    </div>
+    <!--幻灯片结束-->
+
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/fillData.js"></script>
+    <script src="js/sliderBanner.js"></script>
     <script>
         window.onload=function(){
-            sliderBanner();
-         }
+            //ajax填充数据方式
+            $("#slider").fillData({
+                jsonUrl:"json/banner.json"
+            });
+            //调用幻灯片函数
+            $("#slider").sliderBanner({
+                autoPlay:true,
+                speed:4000
+            });
+        }
+
+        //静态数据方式
+        $("#slider1").sliderBanner({
+                autoPlay:false,
+                speed:4000
+        });
     </script>
 </body>
 </html>

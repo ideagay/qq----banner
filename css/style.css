@@ -49,7 +49,7 @@ q:before,q:after {
 *:first-child+html .clearfix { zoom: 1; } /* IE7 */
 
 /*幻灯片开始*/
-#slider{
+.slider{
     width: 700px;
     height: 400px;
     overflow: hidden;
@@ -58,28 +58,28 @@ q:before,q:after {
 }
 
 /*大图部分*/
-#slider .slider-main{
+.slider .slider-main{
     width: 100%;
     height: 320px;
     overflow: hidden;
     position: relative;
     z-index: 1;
 }
-#slider .slider-main .main-i{
+.slider .slider-main .main-i{
     position: absolute;
     left: 0;
     top:0;
     display:none;
 }
-#slider .slider-main .main-i-active{
+.slider .slider-main .main-i-active{
     display:block;
 }
-#slider .slider-main img{
+.slider .slider-main img{
     width: 100%;
     height: 320px;
 }
 /*标题部分*/
-#slider .slider-title{
+.slider .slider-title{
     background-color: rgba(0,0,0,.8);
     position: absolute;
     left: 0;
@@ -88,20 +88,20 @@ q:before,q:after {
     width: 100%;
     z-index: 10;
 }
-#slider .slider-title a{
+.slider .slider-title a{
     color: white;
     font-size: 26px;
     line-height: 53px;
     padding-left: 20px;
 }
-#slider .slider-title .title-i{
+.slider .slider-title .title-i{
     display: none;
 }
-#slider .slider-title .title-i-active{
+.slider .slider-title .title-i-active{
     display: block;
 }
 /*上下张按钮*/
-#slider .slider-switch{
+.slider .slider-switch{
     font-size: 0;
    /*//去掉display:inline-block的空隙*/
     position: absolute;
@@ -109,7 +109,7 @@ q:before,q:after {
     bottom: 90px;
     right:20px;
 }
-#slider .slider-switch a{
+.slider .slider-switch a{
     margin-right: 1px;
     font-size: 14px;
     display: inline-block;
@@ -117,35 +117,35 @@ q:before,q:after {
     height: 29px;
     background: url('../images/icon_focus_switch.png') no-repeat;
 }
-#slider .slider-switch a.btn-prev{
+.slider .slider-switch a.btn-prev{
     background-position: 0 0;
 }
-#slider .slider-switch a.btn-prev:hover{
+.slider .slider-switch a.btn-prev:hover{
     background-position: -30px 0;
 }
-#slider .slider-switch a.btn-next{
+.slider .slider-switch a.btn-next{
     background-position:-60px 0;
 }
-#slider .slider-switch a.btn-next:hover{
+.slider .slider-switch a.btn-next:hover{
     background-position:-90px 0;
 }
 
 /*缩略图部分*/
-#slider .slider-smImg{
+.slider .slider-smImg{
     position: relative;
     width: 100%;
     height: 80px;
     padding: 10px 0;
     background-color: #000;
 }
-#slider .slider-smImg .smImg-i{
+.slider .slider-smImg .smImg-i{
     float: left;
     margin: 0 5px 0 5px;
     font-size: 0;
     position: relative;
     opacity: 0.4;
 }
-#slider .slider-smImg .smImg-i .border{
+.slider .slider-smImg .smImg-i .border{
     position: absolute;
     width: 100%;
     height: 4px;
@@ -154,13 +154,13 @@ q:before,q:after {
     background-color: #0cc65b;
     display: none;
 }
-#slider .slider-smImg .smImg-i-active .border{
+.slider .slider-smImg .smImg-i-active .border{
     display: block;
 }
-#slider .slider-smImg .smImg-i-active{
+.slider .slider-smImg .smImg-i-active{
     opacity: 1;
 }
-#slider .slider-smImg .smImg-i img{
+.slider .slider-smImg .smImg-i img{
     width: 60px;
     height: 60px;
 }
